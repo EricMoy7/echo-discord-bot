@@ -1,6 +1,6 @@
 import os
 import discord
-# from dotenv import load_dotenv
+from dotenv import load_dotenv
 from Reddit import RedditRunner
 import asyncio
 import time
@@ -10,7 +10,7 @@ import time
 class DiscordBot:
     def __init__(self):
 
-        # load_dotenv()
+        load_dotenv()
         self.TOKEN = os.getenv('DISCORD_TOKEN')
 
         return
