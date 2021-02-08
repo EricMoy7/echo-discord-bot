@@ -18,13 +18,13 @@ class DiscordBot:
     async def reddit_to_discord(self, client):
         await client.wait_until_ready()
         #Move keys to env file
-        runner = RedditRunner("2hKYgXAVthCQvA","A1K8JN_20eOXOw3SpZhGNCEoZyd3Vg","airzm", "robinhoodpennystocks+pennystocks+stocks")
+        runner = RedditRunner("2hKYgXAVthCQvA","A1K8JN_20eOXOw3SpZhGNCEoZyd3Vg","airzm", "robinhoodpennystocks+pennystocks+moongangcapital")
         #robinhoodpennystocks+pennystocks
         await runner.initialize_api()
         await runner.set_subreddit()
 
         #Replace this with getter function
-        channel = client.get_channel(776287381547515943)
+        channel = client.get_channel(802279378725240852)
 
         while not client.is_closed():
             try:
