@@ -31,9 +31,12 @@ class DiscordBot:
                 async for submission in runner.subreddit.stream.submissions(skip_existing=True):
                     print(f'Time: {time.ctime(time.time())}')
                     if submission:
+                        text = submission.selftext
+                        if len(submission.selftext) > 1024:
+                            text = submission.selftext[0:1024]
                         embedVar = discord.Embed(title=f'{submission.title}', description=f'Written by: {submission.author}')
                         embedVar.add_field(name="Link", value=submission.url, inline=False)
-                        embedVar.add_field(name="Content", value=submission.selftext, inline=False)
+                        embedVar.add_field(name="Content", value=text, inline=False)
                         await channel.send(embed=embedVar)
                         print('Sending Message...')
                     
